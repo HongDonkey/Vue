@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import DataBinding from '../views/DataBinding/DataBindingList2.vue'
 import nested from '../views/NestedComponent.vue'
+import KakaoLogin from '../views/KakaoLogin.vue'
 
 const routes = [
   {
@@ -27,6 +28,21 @@ const routes = [
     path: '/nested',
     name: 'nested',
     component: nested
+  },
+  { 
+    path: '/KakaoLogin',
+    name: 'KakaoLogin',
+    component: KakaoLogin
+  },
+  { 
+    path: '/NaverLogin',
+    name: 'NaverLogin',
+    component: () => import(/* webpackChunkName: "about" */ '../views/NaverLogin.vue')
+  },
+  { 
+    path: '/GoogleLogin',
+    name: 'GoogleLogin',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GoogleLogin.vue')
   }
 ]
 
